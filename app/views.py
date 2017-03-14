@@ -6,3 +6,13 @@ from app import app
 def signup():
 
 	return (render_template("signup.html"))
+
+@app.route('/login')
+def login():
+
+	return (render_template("login.html"))
+
+@app.route('/signup')
+def signup2():
+
+	return (render_template("signup.html"))
