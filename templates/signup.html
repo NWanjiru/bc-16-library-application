@@ -7,7 +7,7 @@
 		</title>
                 <style>
 					body {
-                      	background-image: url("https://c1.staticflickr.com/1/305/18893533195_869d607973_b.jpg");
+                      	background-image: url("https://images7.alphacoders.com/637/637761.jpg");
 						background-size: cover;
 						background-repeat : no-repeat;
 						}
@@ -33,21 +33,21 @@
 						font-weight : bold;
 						background : green;
 						color : yellow;
-						margin-left : 11cm;
+						margin-left: 12cm;
 						margin-right: 15cm;
-						align : "center";
+						padding-left: 2cm
 						}
 
 					a{
-						color : yellow;
-						background: black;
+						color : hotpink;
+						background : black
 						}
 
 					footer{
 						font-family: Georgia;
 						font-style: bold;
 						text-align: center;
-						margin-top: 6cm;
+						margin-top: 4cm;
 						color: blue;
 					}
 		
@@ -61,18 +61,21 @@
 			<div>
 				<nav>
 					<h4>
-							<a href="/signup">Sign up
-							</a>
+						<a href="/login">Login Here
+						</a>
 					</h4>
 				</nav>	
 			</div>
 
 
-			<form>
-				<div style="margin-left:2cm padding:0px 5px";>
+			<form action ="/signup" method="POST">
+				<div>
 
 					<label><b>Username</b></label>
 						<input type="text" placeholder="Enter new username" name="username" required><br><br>
+
+					<label><b>E-mail  :</b></label>
+						<input type="text" placeholder="Enter your email" name="email" required><br><br>
 
 					<label><b>Password</b></label>
 						<input type="password" placeholder="Password" name="password" required><br>
@@ -80,9 +83,10 @@
 					<br><input type="checkbox" checked="checked"> Remember me
 
 						<div>
-							<button type="submit">Sign In</button>
 
-      						<br><button type="button">Forgot Password?</button>	
+      						<br><button type="button">Cancel</button>
+      			
+      							<button type="submit">Sign Up</button>
 
     					</div>
 
