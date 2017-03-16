@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <!-- Login page styling and formatting -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -8,20 +9,20 @@
   <style>
   body{
       background-image: url("https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSyAdqJRewZoglxOJAmzFdK3AGMKmtDUov_L_9-TJ3MVZvchzGM")
-
-
-  }
+      }
   </style>
 </head>
 <body>
    
 <div class="container">
   <h2>Ray's Lib</h2><br><br>
+  <!-- user log in form -->
  <form action="/login" method="POST">
+
         <div style="margin-left:2cm padding:0px 5px";>
 
           <label><b>Username</b></label>
-            <input type="text" placeholder="Enter new username" name="username" required><br><br>
+            <input type="text" placeholder="Username" name="username" required><br><br>
 
           <label><b>Password</b></label>
             <input type="password" placeholder="Password" name="password" required><br>
@@ -30,8 +31,6 @@
 
             <div>
               <br><button type="submit">Sign In</button>
-
-                  <br><br><button type="button">Forgot Password?</button> 
 
               </div>
 
