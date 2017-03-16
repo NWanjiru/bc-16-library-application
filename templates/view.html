@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Ray's Lib
+        </title>
+        <style>
+
+            th{
+                text-align: left;
+                }
+            table, th, td { 
+                border: 1px solid black; border-collapse: collapse;
+                color: Orange;
+                background-color: brown
+                }
+            th, td {
+                padding: 15px;
+                }
+            body{
+                background-image: url("https://c1.staticflickr.com/1/305/18893533195_869d607973_b.jpg")
+                
+            }
+        </style>
+        <link href="style.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <h1 style="color:white; background-color:black;">Book Catalog</h1>
+        <table width = 60%>
+            <tr>
+                    <th><h3>Book Title</h3></h>
+                    <th>Author</th>
+                    <th>Category</th>
+                    <th>Available</th>
+            </tr>
+            {%- for book in books %}
+                <tr>
+                    <td>{{ book.name }}</td>
+                    <td>{{ book.author }}</td>
+                    <td>{{ book.category }}</td>
+                    <td>{{ book.available }}</td>
+                </tr>
+            {%- endfor %}
+        </table>
+    </body>
+
+</html>

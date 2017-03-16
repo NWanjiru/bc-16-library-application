@@ -1,99 +1,36 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
 
-	<head>
-		<title>
-			Ray's Library
-		</title>
-                <style>
-					body {
-                      	background-image: url("https://c1.staticflickr.com/1/305/18893533195_869d607973_b.jpg");
-						background-size: cover;
-						background-repeat : no-repeat;
-						}
+<div class="container">
+  <h2>Ray's Lib</h2>
+ <form action="/login" method="POST">
+        <div style="margin-left:2cm padding:0px 5px";>
 
-					h1{
-			
-						font-weight : bold;
-						font-size : 3cm;
-						font-family : Arial;
-						font-style : normal;
-						color : white;
-						margin-left : 4cm;
-						}
+          <label><b>Username</b></label>
+            <input type="text" placeholder="Enter new username" name="username" required><br><br>
 
-					h4{
-						font-family : Arial;
-						font-style : bold;
-						margin-left: 25cm;
-						}
+          <label><b>Password</b></label>
+            <input type="password" placeholder="Password" name="password" required><br>
 
-					form{
-						font-family : Courier;
-						font-weight : bold;
-						background : green;
-						color : yellow;
-						margin-left : 11cm;
-						margin-right: 15cm;
-						align : "center";
-						}
+          <br><input type="checkbox" checked="checked"> Remember me
 
-					a{
-						color : yellow;
-						background: black;
-						}
+            <div>
+              <button type="submit">Sign In</button>
 
-					footer{
-						font-family: Georgia;
-						font-style: bold;
-						text-align: center;
-						margin-top: 6cm;
-						color: blue;
-					}
-		
-				</style>
-	</head>
+                  <br><br><button type="button">Forgot Password?</button> 
 
-	<body>
-		<div>
-			<h1><strong>Ray's Lib</strong></h1>
-		</div>
-			<div>
-				<nav>
-					<h4>
-							<a href="/signup">Sign up
-							</a>
-					</h4>
-				</nav>	
-			</div>
+              </div>
 
+          </div>
+      </form>
+</div>
 
-			<form action="/login" method="POST">
-				<div style="margin-left:2cm padding:0px 5px";>
-
-					<label><b>Username</b></label>
-						<input type="text" placeholder="Enter new username" name="username" required><br><br>
-
-					<label><b>Password</b></label>
-						<input type="password" placeholder="Password" name="password" required><br>
-
-					<br><input type="checkbox" checked="checked"> Remember me
-
-						<div>
-							<button type="submit">Sign In</button>
-
-      						<br><button type="button">Forgot Password?</button>	
-
-    					</div>
-
-  				</div>
-			</form>
-
-			<footer>
-
-				<p>Creation by N. Wanjiru 2017</p>
-
-			</footer>
-
-	</body>
+</body> 
 </html>

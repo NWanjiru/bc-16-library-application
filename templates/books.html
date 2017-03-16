@@ -7,9 +7,10 @@
 		</title>
                 <style>
 					body {
-                      	background-image: url("https://images7.alphacoders.com/637/637761.jpg");
+                      	background-image: url("https://thegirlsguidetoreading.files.wordpress.com/2016/05/beautiful-book-spines.png");
 						background-size: cover;
 						background-repeat : no-repeat;
+						background-webkit-filter: grayscale(0.5) blur(25px);
 						}
 
 					h1{
@@ -31,23 +32,23 @@
 					form{
 						font-family : Courier;
 						font-weight : bold;
-						background : green;
+						background : brown;
 						color : yellow;
-						margin-left: 12cm;
+						margin-left : 11cm;
 						margin-right: 15cm;
-						padding-left: 2cm
+						align : "center";
 						}
 
 					a{
-						color : hotpink;
-						background : black
+						color : yellow;
+						background: black;
 						}
 
 					footer{
 						font-family: Georgia;
 						font-style: bold;
 						text-align: center;
-						margin-top: 4cm;
+						margin-top: 6cm;
 						color: blue;
 					}
 		
@@ -61,38 +62,37 @@
 			<div>
 				<nav>
 					<h4>
-						<a href="/login">Login Here
-						</a>
+							<a href="/">Log Out
+							</a>
 					</h4>
 				</nav>	
 			</div>
 
 
-			<form>
-				<div>
+			<form action="/books" method="POST">
+				
+					<p> Add new books to the library</p>
 
-					<label><b>Username</b></label>
-						<input type="text" placeholder="Enter new username" name="username" required><br><br>
+					<label><b>Name</b></label>
+						<input type="text" name="name" required><br><br>
 
-					<label><b>E-mail  :</b></label>
-						<input type="text" placeholder="Enter your email" name="email" required><br><br>
+					<label><b>Author</b></label>
+						<input type="text" name="author" required><br>
 
-					<label><b>Password</b></label>
-						<input type="password" placeholder="Password" name="password" required><br>
+					<br><label><b>Category</b></label>
+						<input type="text" name="category"><br>
 
-					<br><input type="checkbox" checked="checked"> Remember me
+
+					<br><input type="checkbox" checked="checked">Available(unchecked)
 
 						<div>
-
-      						<br><button type="button">Cancel</button>
-      			
-      							<button type="submit">Sign Up</button>
+							<button type="submit">Add Book</button>
 
     					</div>
 
   				</div>
 			</form>
-
+			 		
 			<footer>
 
 				<p>Creation by N. Wanjiru 2017</p>

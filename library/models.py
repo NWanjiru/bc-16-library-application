@@ -22,12 +22,18 @@ class User(db.Model):
 
 class Books(db.Model):
 
-	__tablename__ = 'books'
+	__tablename__ = 'book'
 
 	id = Column(Integer, primary_key = True)
 	name = Column(String(120), nullable = False)
-	Author = Column(String(120), nullable = False)
+	author = Column(String(120), nullable = False)
 	category = Column(String(120), nullable = True)
 	available = Column(Boolean, default = True)
 	user_id = Column(Integer, ForeignKey('user.id'))
 	#user = relationship(User)
+
+	def __init__(self, name, author, category, available = True):
+		self.name = name
+		self.author = author
+		self.category = category
+		self.available = available
