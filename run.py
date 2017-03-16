@@ -75,9 +75,8 @@ def logout():
 	logout_user()
 	return(redirect(url_for("login")))
 
-@app.route('/books',methods=['GET'])
+@app.route('/books',methods=['GET', 'POST'])
 def add_book():
-	
 	if request.method=='POST':
 		name = request.form['name']
 		author = request.form['author']
@@ -85,7 +84,9 @@ def add_book():
 		book = Books(name, author, category)
 		db.session.add(book)
 		db.session.commit()
-	return(render_template('books.html'))
+		return(redirect(url_for('view_books')))
+	else:
+		return(render_template("books.html"))
 		
 
 
