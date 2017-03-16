@@ -12,6 +12,7 @@ class User(db.Model):
 	email = Column(String(80), unique=True, nullable = True)
 	password = Column(String(80), nullable = False)
 	admin = Column(Boolean, default=False) 
+	is_active =Column(Boolean, default=False)
 
 	def __init__(self, username, email, password, admin = False):
 		self.username = username
@@ -28,7 +29,7 @@ class Books(db.Model):
 	name = Column(String(120), nullable = False)
 	author = Column(String(120), nullable = False)
 	category = Column(String(120), nullable = True)
-	available = Column(Boolean, default = True)
+	available = Column(Integer)
 	user_id = Column(Integer, ForeignKey('user.id'))
 	#user = relationship(User)
 

@@ -7,7 +7,7 @@
 		</title>
                 <style>
 					body {
-                      	background-image: url("https://thegirlsguidetoreading.files.wordpress.com/2016/05/beautiful-book-spines.png");
+                      	background-image: url("http://wallpapercave.com/wp/2FwK691.jpg");
 						background-size: cover;
 						background-repeat : no-repeat;
 						background-webkit-filter: grayscale(0.5) blur(25px);
@@ -32,10 +32,9 @@
 					form{
 						font-family : Courier;
 						font-weight : bold;
-						background : brown;
-						color : yellow;
-						margin-left : 11cm;
-						margin-right: 15cm;
+						color : white;
+						padding-left : 10cm;
+						padding-right: 10cm;
 						align : "center";
 						}
 
@@ -62,31 +61,28 @@
 			<div>
 				<nav>
 					<h4>
-							<a href="/">Log Out
+							<a href="/logout">Log Out
 							</a>
 					</h4>
 				</nav>	
 			</div>
 
 
-			<form action="/books" method="POST">
+			<form method="POST">
 				
-					<p> Add new books to the library</p>
+					<p>Add new books</p>
 
-					<label><b>Name</b></label>
+					<label><b>Name</b></label><br>
 						<input type="text" name="name" required><br><br>
 
-					<label><b>Author</b></label>
+					<label><b>Author</b></label><br>
 						<input type="text" name="author" required><br>
 
-					<br><label><b>Category</b></label>
+					<br><label><b>Category</b></label><br>
 						<input type="text" name="category"><br>
 
-
-					<br><input type="checkbox" checked="checked">Available(unchecked)
-
 						<div>
-							<button type="submit">Add Book</button>
+							<br><button type="submit">Add Book</button>
 
     					</div>
 
