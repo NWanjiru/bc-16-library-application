@@ -2,19 +2,14 @@ from flask import Flask, flash, render_template, redirect, request, url_for
 from flask_sqlalchemy import SQLAlchemy 
 from flask_login import login_required, login_user, logout_user, LoginManager
 from library.models import db, User, Books
-import Flask_WTF 
+#import Flask-WTF 
 import jinja2
 
-""" Map local/os environment"""
 import os
-
-""" Initialize the app """
 
 app = Flask(__name__)
 app.secret_key = 'cray one'
 
-
-""" Configure database and debug settings for development, 'DEBUG' should be set to False during production"""
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///library.db'
 app.config ['DEBUG'] = True
@@ -23,17 +18,16 @@ db.app=app
 db.init_app(app)
 db.create_all()
 
-login_manager = LoginManager()
-login_manager.init_app(app)
+# login_manager = LoginManager()
+# login_manager.init_app(app)
 
-
-""" Use the @app.route decorator to specify the path on which the view will be displayed on."""
 
 @app.route('/signup',methods=['GET','POST'])
 def signup():
-	""" Check what method has called the function. If the method is POST, 
-	query the database for 'username' and 'email' matches'. 
-	Add new user and their details into the database, if the entries are unique."""
+	""" Check what method has called the function. """
+	# If the method is POST, 
+	# query the database for 'username' and 'email' matches'. 
+	# Add new user and their details into the database, if the entries are unique."""
 
 
 	if request.method=='POST':
@@ -42,15 +36,15 @@ def signup():
 		password = request.form['password']
 		user_username = User.query.filter_by(username=username).first()
 		if user_username:
-			return('That username is already in use')
+			flash('That username is already in use')
 		user_email = User.query.filter_by(email=email).first()
 		if user_email:
-			return('That email address already exists in the system.')
+			flash('That email address already exists in the system.')
 		else:
 			user = User(username, email,password)
 			db.session.add(user)
 			db.session.commit()
-			return(redirect(url_for("login")))
+			flash(redirect(url_for("login")))
 
 	else:
 		return(render_template("signup.html"))
@@ -60,23 +54,21 @@ def signup():
 def login():
 	""" Check if username or password exist and if user is admin"""
 
-	form = LoginForm()
-
 	if request.method=='POST':
 		username = request.form['username']
 		password = request.form['password']
 		user = User.query.filter_by(username=username).first()
 
-		if user is not None and user.verify_password(form.password.data):
+		if user:
 			if username == 'admin' and password == 'cray one':
 				login_user(user, remember=True)
-				"""Login and check whether the user credentials match the set admin credentials """
+				# """Login and check whether the user credentials match the set admin credentials """
 
 				return(redirect(url_for("view_books")))
 
 			if password == user.password:
 				login_user(user, remember=True)
-				""" Check whether login password matches the stored password for an already registered user"""
+				# """ Check whether login password matches the stored password for an already registered user"""
 
 				return(redirect(url_for("view_books")))
 
@@ -88,20 +80,21 @@ def login():
 	else:
 		return(render_template('login.html'))
 
-@app.route('/logout')
-@login_required
-def logout():
+# @app.route('/logout')
+# #@login_required
+# def logout():
 
-	""" Allows user to end the current session """
+# 	""" Allows user to end the current session """
 
-	logout_user()
-	return(redirect(url_for("login")))
+# 	logout_user()
+# 	return(redirect(url_for("login")))
 
 @app.route('/books',methods=['GET', 'POST'])
-@login_required
+#@login_required
 def add_book():
-	""" Check which method has called the function and add new book, if the calling method is 'POST'
-	else, display the list of books that already exist in the database"""
+	""" Check which method has called the function and add new book""" 
+	# if the calling method is 'POST'
+	# else, display the list of books that already exist in the database"""
 
 	if request.method=='POST':
 		name = request.form['name']
@@ -117,7 +110,7 @@ def add_book():
 
 
 @app.route('/view', methods=['GET'])
-@login_required
+#@login_required
 def view_books():
 	""" Query the database for all entries in the Books table and display them in the specified template """
 

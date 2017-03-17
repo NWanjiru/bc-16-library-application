@@ -1,6 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import Column, Integer, String, Boolean, ForeignKey
-
+#from run import login_manager
 db = SQLAlchemy()
 
 class User(db.Model):
@@ -20,6 +20,14 @@ class User(db.Model):
 		self.password = password
 		self.admin = admin
 
+	def __repr__(self):
+		return('<User %r>' % self.id)
+
+# @login_manager.user_loader
+
+# def load_user(user_id):
+
+#     return Users.query.get(int(user_id))
 
 class Books(db.Model):
 
@@ -38,3 +46,6 @@ class Books(db.Model):
 		self.author = author
 		self.category = category
 		self.available = available
+
+	def __repr__(self):
+		return('<Books %r>' % self.id)
